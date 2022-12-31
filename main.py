@@ -7,7 +7,7 @@ FOREX_ENDPOINT = "https://www.alphavantage.co/query"
 NEWS_ENDPOINT = "https://newsapi.org/v2/everything"
 
 FOREX_API_KEY = "7KBBWKJAJSWY0PZF"
-
+NEWS_API_KEY = "345f0fb8ff4b462188810428cf25e411"
     ## STEP 1: Use https://www.alphavantage.co/documentation/#daily
 # When stock price increase/decreases by 5% between yesterday and the day before yesterday then print("Get News").
 
@@ -39,8 +39,18 @@ print(difference)
 
 
 #TODO 4. - Work out the percentage difference in price between closing price yesterday and closing price the day before yesterday.
+diff_percent = (difference / float(yesterday_closing_price)) * 100
+print(diff_percent)
+
 
 #TODO 5. - If TODO4 percentage is greater than 5 then print("Get News").
+if diff_percent > 1:
+    news_params = {
+        "apiKey": NEWS_API_KEY,
+        "qInTitle": TO_FOREX_PAIR,
+    }
+
+
 
     ## STEP 2: https://newsapi.org/ 
     # Instead of printing ("Get News"), actually get the first 3 news pieces for the COMPANY_NAME. 
