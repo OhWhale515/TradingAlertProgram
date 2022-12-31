@@ -1,7 +1,7 @@
 import requests
 
-FROM_FOREX_PAIR = "EUR"
-TO_FOREX_PAIR = "JPY"
+FROM_FOREX_PAIR = "USD"
+TO_FOREX_PAIR = "XAU"
 
 FOREX_ENDPOINT = "https://www.alphavantage.co/query"
 NEWS_ENDPOINT = "https://newsapi.org/v2/everything"
@@ -47,9 +47,11 @@ print(diff_percent)
 if diff_percent > 1:
     news_params = {
         "apiKey": NEWS_API_KEY,
-        "qInTitle": TO_FOREX_PAIR,
-    }
+        "qInTitle": TO_FOREX_PAIR, 
+        }
 
+    news_response = requests.get(NEWS_ENDPOINT, params=news_params)
+    print(news_response.json())
 
 
     ## STEP 2: https://newsapi.org/ 
