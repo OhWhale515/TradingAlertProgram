@@ -12,15 +12,16 @@ FOREX_API_KEY = "7KBBWKJAJSWY0PZF"
 # When stock price increase/decreases by 5% between yesterday and the day before yesterday then print("Get News").
 
 #TODO 1. - Get yesterday's closing stock price. Hint: You can perform list comprehensions on Python dictionaries. e.g. [new_value for (key, value) in dictionary.items()]
-stock_params = {
+forex_params = {
     "function": "FX_DAILY",
     "from_symbol": FROM_FOREX_PAIR,
     "to_symbol": TO_FOREX_PAIR,
     "apikey": FOREX_API_KEY,
 }
 
-response = requests.get(STOCK_ENDPOINT, params=stock_params )
-print(response.json())
+response = requests.get(FOREX_ENDPOINT, params=forex_params )
+data = response.json() ["Time Series FX (Daily)"]
+data_list = [value for (key, value) in data.items()]
 
 
 #TODO 2. - Get the day before yesterday's closing stock price
