@@ -1,6 +1,6 @@
 import requests
 
-FROM_FOREX_PAIR = "EUR"
+FROM_FOREX_PAIR = "USD"
 TO_FOREX_PAIR = "JPY"
 
 FOREX_ENDPOINT = "https://www.alphavantage.co/query"
