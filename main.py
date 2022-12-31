@@ -45,7 +45,10 @@ print(diff_percent)
 
 #TODO 5. - If TODO4 percentage is greater than 5 then print("Get News").
 if diff_percent > 1:
-    print("Get News")
+    news_params = {
+        "apiKey": NEWS_API_KEY,
+        "qInTitle": TO_FOREX_PAIR,
+    }
 
 
 
