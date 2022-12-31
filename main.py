@@ -29,7 +29,6 @@ data = response.json() ["Time Series FX (Daily)"]
 data_list = [value for (key, value) in data.items()]
 yesterday_data = data_list[0]
 yesterday_closing_price = yesterday_data["4. close"]
-
 print(yesterday_closing_price)
 
 #Get the day before yesterday's closing stock price
@@ -75,7 +74,7 @@ print(three_articles)
     #to send a separate message with each article's title and description to your phone number. 
 
 #Create a new list of the first 3 article's headline and description using list comprehension.
-formatted_articles = [f"Headline: {article['title']}. \nBrief: {article ['description']}" for article in three_articles]
+formatted_articles = [f"{FROM_FOREX_PAIR}: {up_down}{diff_percent}%\nHeadline: {article['title']}. \nBrief: {article ['description']}" for article in three_articles]
 
 client = Client(TWILIO_SID, TWILIO_AUTH_TOKEN)
 
