@@ -9,7 +9,10 @@ NEWS_ENDPOINT = "https://newsapi.org/v2/everything"
 
 FOREX_API_KEY = "7KBBWKJAJSWY0PZF"
 NEWS_API_KEY = "345f0fb8ff4b462188810428cf25e411"
-TWILIO_SID = AC16dc1c299b67bafe6cf6b4b068f85e0b
+TWILIO_SID = "AC16dc1c299b67bafe6cf6b4b068f85e0b"
+TWILIO_AUTH_TOKEN = "e78c657bbfbc7d52c66f27a74098bc13"
+
+
     ## STEP 1: Use https://www.alphavantage.co/documentation/#daily
 # When stock price increase/decreases by 5% between yesterday and the day before yesterday then print("Get News").
 
@@ -75,7 +78,7 @@ print(three_articles)
 formatted_articles = [f"Headline: {article['title']}. \nBrief: {article ['description']}" for article in three_articles]
 
 #TODO 9. - Send each article as a separate message via Twilio. 
-
+client = Client(TWILIO_SID, TWILIO_AUTH_TOKEN)
 
 
 # #Optional TODO: Format the message like this: 
