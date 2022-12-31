@@ -1,7 +1,7 @@
 import requests
 
 FROM_FOREX_PAIR = "USD"
-TO_FOREX_PAIR = "XAU"
+TO_FOREX_PAIR = "EUR"
 
 FOREX_ENDPOINT = "https://www.alphavantage.co/query"
 NEWS_ENDPOINT = "https://newsapi.org/v2/everything"
