@@ -1,4 +1,5 @@
 import requests
+from twilio.rest import Client
 
 FROM_FOREX_PAIR = "USD"
 TO_FOREX_PAIR = "JPY"
@@ -8,6 +9,7 @@ NEWS_ENDPOINT = "https://newsapi.org/v2/everything"
 
 FOREX_API_KEY = "7KBBWKJAJSWY0PZF"
 NEWS_API_KEY = "345f0fb8ff4b462188810428cf25e411"
+TWILIO_SID = AC16dc1c299b67bafe6cf6b4b068f85e0b
     ## STEP 1: Use https://www.alphavantage.co/documentation/#daily
 # When stock price increase/decreases by 5% between yesterday and the day before yesterday then print("Get News").
 
