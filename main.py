@@ -1,6 +1,6 @@
 import requests
 
-FROM_FOREX_PAIR = "EUR"
+FROM_FOREX_PAIR = "USD"
 TO_FOREX_PAIR = "JPY"
 
 FOREX_ENDPOINT = "https://www.alphavantage.co/query"
@@ -61,6 +61,7 @@ if diff_percent > 1:
     news_response = requests.get(NEWS_ENDPOINT, params=news_params)
     articles = news_response.json()["articles"]
     print(articles)
+    
 #TODO 7. - Use Python slice operator to create a list that contains the first 3 articles. Hint: https://stackoverflow.com/questions/509211/understanding-slice-notation
 three_articles = articles[:3]
 print(three_articles)
@@ -69,6 +70,7 @@ print(three_articles)
     #to send a separate message with each article's title and description to your phone number. 
 
 #TODO 8. - Create a new list of the first 3 article's headline and description using list comprehension.
+formatted_articles = [f"Headline: {article['title']}. \nBrief: {article ['description']}" for article in three_articles]
 
 #TODO 9. - Send each article as a separate message via Twilio. 
 
